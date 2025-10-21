@@ -2,7 +2,6 @@ Já havia upado no github, mas resolvi incrementar o repositório com todas as a
 
 *** A partir desse ponto, será incluído na descrição as aulas ***
 
-v1.4 - 04 Funções com parâmetros
-v1.5 - 05 Funções com retorno
-v1.6 - 06 Tipo Booleano
-v1.7 - Final da aula
+Explore funções e listas
+
+v2.0 02 - Verificando o chute
