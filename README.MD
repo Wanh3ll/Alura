@@ -4,4 +4,4 @@ Já havia upado no github, mas resolvi incrementar o repositório com todas as a
 
 Explore funções e listas
 
-v2.0 02 - Verificando o chute
+v2.0 02 - Verificando o chute (correçaõ)
