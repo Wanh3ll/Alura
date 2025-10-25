@@ -33,14 +33,17 @@ function verificarChute() {
         tentativas++;
     }
 }
+// Sessão de funções
 function numeroSecreto() {
-    return parseInt(Math.random() * 10 + 1);
+    return parseInt(Math.random() * 10 + 1); // número aleatório entre 1 e 10
 }
 function limparChute() {
-    chute = document.querySelector("input");
+    chute = document.querySelector("input"); // seleciona o valor do input
     chute.value = "";
 }
-
+function funcaoReiniciar() {
+    window.location.reload(true); // atualiza a página ao clicar no botão novo jogo
+}
 
 
 

@@ -6,7 +6,7 @@ Com isso em vista, não achei necessário a descrição aqui.
 
 Explore funções e listas
 
-v2.0 02 - Verificando o chute (correçaõ)
+v2.0 - Verificando o chute (correçaõ)
 v2.1 - Contando tentativas
 v2.2 - Botão Reiniciar
     Nessa aula, encontrei um pequeno problema: após o botão Novo Jogo era habilitado, ao reiniciar a página para iniciar uma
@@ -17,3 +17,11 @@ v2.2 - Botão Reiniciar
         elementoReiniciar.disabled = false;
     que habilita o botão novo jogo.
     Dessa forma, sempre que a página for atualizada, mesmo que já esteja aberta, o botão Novo Jogo sempre estará desabilitado.
+
+v2.3 - Reiniciando o jogo
+    O conteúdo da aula poderia ter sido reduzido com a adição da função: 
+        function funcaoReiniciar() {
+        window.location.reload(true); 
+        }
+    atrelada ao botão Novo jogo no HTML. Essa função simplesmente recarrega a página e lê novamente o código, não precisando
+    adicionar mais variáveis e funções, deixando mais leve a execução.
