@@ -1,14 +1,12 @@
-let numeroAleatorio = 5;
-//let numeroAleatorio = numeroSecreto();
+let numerosSorteados = [];
+let numeroLimite = 10;
+//let numeroAleatorio = 5;
+let numeroAleatorio = numeroSecreto();
 let tentativas = 1;
-function alterarTexto(tag, textoElemento) {
-    let elemento = document.querySelector(tag);
-    elemento.innerHTML = textoElemento;
-}
 let elementoReiniciar = document.getElementById("reiniciar");
 elementoReiniciar.disabled = true; // para que o botão novo jogo inicie desabilitado
-alterarTexto("h1", "Jogo do número secreto");
-alterarTexto("p", "Escolha um número entre 1 e 10");
+
+textoInicial();
 limparChute();
 
 function verificarChute() {
@@ -33,16 +31,41 @@ function verificarChute() {
         tentativas++;
     }
 }
+
 // Sessão de funções
+function textoInicial() {
+    alterarTexto("h1", "Jogo do número secreto");
+    alterarTexto("p", "Escolha um número entre 1 e 10");
+}
+function alterarTexto(tag, textoElemento) {
+    let elemento = document.querySelector(tag); // seleciona o elemento pela tag e atribui à variável
+    elemento.innerHTML = textoElemento;
+}
 function numeroSecreto() {
-    return parseInt(Math.random() * 10 + 1); // número aleatório entre 1 e 10
+    let numeroEscolhido =  parseInt(Math.random() * numeroLimite + 1); // número aleatório entre 1 e 10
+    let maxEscolhidos = numerosSorteados.length;
+    if (maxEscolhidos == numeroLimite) {
+        numerosSorteados = []; // reseta a lista se todos os números já foram sorteados
+    }
+    if (numerosSorteados.includes(numeroEscolhido)) {
+        return numeroSecreto(); // chama a função novamente se o número já foi sorteado
+    }
+    else {
+        numerosSorteados.push(numeroEscolhido); // adiciona o número sorteado à lista
+        console.log(numerosSorteados); // exibe a lista de números sorteados no console
+        return numeroEscolhido;
+    }
 }
 function limparChute() {
     chute = document.querySelector("input"); // seleciona o valor do input
     chute.value = "";
 }
 function funcaoReiniciar() {
-    window.location.reload(true); // atualiza a página ao clicar no botão novo jogo
+    numeroAleatorio = numeroSecreto();
+    limparChute();
+    tentativas = 1;
+    textoInicial();
+    elementoReiniciar.disabled = true;
 }
 
 
