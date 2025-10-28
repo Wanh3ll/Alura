@@ -36,3 +36,16 @@ v3.2 - Limitando os números sorteados
         numerosSorteados = [];
         }
     condição que reset a lista quando o número de sorteados chegar a 10 (numeorLimite).
+
+Publicando o Projeto
+v4.0 - Speech
+    Há um erro no uso o Responsive Voice porque é pago ou exige cadastro para usá-lo. Como alternativa, foi sugerido pelos moderadores a utilização de outra biblioteca Web Speech API com o seguinte código (condicional) diretamente no javaScript:
+        if ('speechSynthesis' in window) { 
+        let utterance = new SpeechSynthesisUtterance(textoElemento);
+        utterance.lang = 'pt-BR'; 
+        utterance.rate = 1.5; 
+        window.speechSynthesis.speak(utterance); 
+    } else {
+        console.log("Web Speech API não suportada neste navegador.");
+    }
+

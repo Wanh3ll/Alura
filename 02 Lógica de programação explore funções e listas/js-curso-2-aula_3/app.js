@@ -40,6 +40,15 @@ function textoInicial() {
 function alterarTexto(tag, textoElemento) {
     let elemento = document.querySelector(tag); // seleciona o elemento pela tag e atribui à variável
     elemento.innerHTML = textoElemento;
+    if ('speechSynthesis' in window) { // Verifica se a API é suportada
+        let utterance = new SpeechSynthesisUtterance(textoElemento); // Cria uma nova instância de fala
+        utterance.lang = 'pt-BR'; 
+        utterance.rate = 1.5; // Define a velocidade da fala
+        window.speechSynthesis.speak(utterance); // Fala o texto
+    } else {
+        console.log("Web Speech API não suportada neste navegador.");
+    }
+
 }
 function numeroSecreto() {
     let numeroEscolhido =  parseInt(Math.random() * numeroLimite + 1); // número aleatório entre 1 e 10
@@ -67,6 +76,7 @@ function funcaoReiniciar() {
     textoInicial();
     elementoReiniciar.disabled = true;
 }
+
 
 
 
